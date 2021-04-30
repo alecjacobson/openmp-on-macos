@@ -1,4 +1,4 @@
-# Testing OpenMP on MacOS
+# Testing OpenMP 🧵 on MacOS 
 
 > **TL;DR** `brew install libomp` and `-Xpreprocessor -fopenmp -lomp`
 
@@ -11,13 +11,15 @@ Happily, it appears that using OpenMP on macos is [now much easier](https://stac
 If you haven't yet installed openmp, consider the `test.cpp` included here with
 contents:
 
-    #include <omp.h>
-    #include <stdio.h>
-    int main() 
-    {
-        #pragma omp parallel
-        printf("Hello from thread %d, nthreads %d\n", omp_get_thread_num(), omp_get_num_threads());
-    }
+```cpp
+#include <omp.h>
+#include <stdio.h>
+int main() 
+{
+    #pragma omp parallel
+    printf("Hello from thread %d, nthreads %d\n", omp_get_thread_num(), omp_get_num_threads());
+}
+```
 
 Try compiling this with the default clang:
 
